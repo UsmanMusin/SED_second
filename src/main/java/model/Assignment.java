@@ -3,7 +3,7 @@ package model;
 import javax.persistence.*;
 import java.util.Set;
 
-@Entity
+//@Entity
 public class Assignment {
 
     @Id
@@ -15,10 +15,10 @@ public class Assignment {
     @ManyToOne
     private Employee author;
 
-    @ManyToMany
-    @JoinTable(name="assignments_executors",
-            joinColumns = @JoinColumn(name="assignment_id", referencedColumnName="id"),
-            inverseJoinColumns = @JoinColumn(name="executor_id", referencedColumnName="id"))
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "assigments_employees",
+            joinColumns = { @JoinColumn(name = "as_id") },
+            inverseJoinColumns = { @JoinColumn(name = "emp_id") })
     private Set<Employee> executors;
 
 
@@ -82,7 +82,7 @@ public class Assignment {
         this.time = time;
     }
 
-    public boolean getControl() {
+    public boolean isControl() {
         return control;
     }
 
@@ -98,7 +98,7 @@ public class Assignment {
         this.text = text;
     }
 
-    public boolean getExecution() {
+    public boolean isExecution() {
         return execution;
     }
 

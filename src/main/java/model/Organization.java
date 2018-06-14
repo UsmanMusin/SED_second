@@ -3,7 +3,7 @@ package model;
 import javax.persistence.*;
 import java.util.Set;
 
-@Entity
+//@Entity
 public class Organization {
 
     @Id
@@ -12,8 +12,6 @@ public class Organization {
 
     @OneToOne
     private Employee manager;
-
-
 
     @OneToMany
     private Set<Department> departmentSet;
@@ -33,20 +31,20 @@ public class Organization {
         this.physicalAddress = physicalAddress;
     }*/
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public long getId() {
         return id;
     }
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Employee getManager() {

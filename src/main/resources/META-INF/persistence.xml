@@ -5,24 +5,24 @@
 
     <persistence-unit name="derby_DB" transaction-type="JTA">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>model.Assignment</class>
-        <class>model.Department</class>
-        <class>model.Employee</class>
-        <class>model.Organization</class>
+        <jta-data-source>jdbc/__default</jta-data-source>
+        <!--<class>model.Assignment</class>-->
+        <!--<class>model.Department</class>-->
+        <!--<class>model.Employee</class>-->
+        <!--<class>model.Organization</class>-->
         <properties>
             <!-- JDBC драйвер -->
-            <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
-            <!-- URL для подключения к базе данных -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/test;create=true"/>
-            <!-- Имя пользователя БД -->
-            <property name="javax.persistence.jdbc.user" value="admin"/>
+            <!--<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>-->
+            <!--&lt;!&ndash; URL для подключения к базе данных &ndash;&gt;-->
+            <!--<property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/test;create=true"/>-->
+            <!--&lt;!&ndash; Имя пользователя БД &ndash;&gt;-->
+            <!--<property name="javax.persistence.jdbc.user" value="test"/>-->
             <!-- Пароль пользователя БД -->
-            <property name="javax.persistence.jdbc.password" value="admin"/>
+            <!--<property name="javax.persistence.jdbc.password" value="admin"/>-->
             <!-- Диалект языка SQL -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyTenSevenDialect"/>
             <!-- Стратегия, по которой Hibernate меняет схему (структуру БД) -->
-            <!-- create-drop - пересоздание БД, т.к. это модульный тест -->
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
         </properties>
     </persistence-unit>
 </persistence>

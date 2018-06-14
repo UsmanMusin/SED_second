@@ -3,7 +3,7 @@ package model;
 import javax.persistence.*;
 import java.util.Set;
 
-@Entity
+//@Entity
 public class Department {
 
     @Id

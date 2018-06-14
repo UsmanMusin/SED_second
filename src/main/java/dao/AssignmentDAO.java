@@ -1,7 +1,6 @@
 package dao;
 
 import model.Assignment;
-import org.hibernate.Session;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -10,6 +9,7 @@ import java.util.List;
 
 @Stateless
 public class AssignmentDAO {
+
     @PersistenceContext(unitName = "derby_DB")
     private EntityManager em;
 
