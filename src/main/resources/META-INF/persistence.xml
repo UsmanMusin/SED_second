@@ -5,24 +5,24 @@
 
     <persistence-unit name="derby_DB" transaction-type="JTA">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <jta-data-source>jdbc/__default</jta-data-source>
-        <!--<class>model.Assignment</class>-->
-        <!--<class>model.Department</class>-->
-        <!--<class>model.Employee</class>-->
-        <!--<class>model.Organization</class>-->
+        <jta-data-source>jdbc/my_derby_connection</jta-data-source>
+        <class>model.Assignment</class>
+        <class>model.Department</class>
+        <class>model.Employee</class>
+        <class>model.Organization</class>
+
         <properties>
-            <!-- JDBC драйвер -->
-            <!--<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>-->
+            <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
             <!--&lt;!&ndash; URL для подключения к базе данных &ndash;&gt;-->
-            <!--<property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/test;create=true"/>-->
-            <!--&lt;!&ndash; Имя пользователя БД &ndash;&gt;-->
-            <!--<property name="javax.persistence.jdbc.user" value="test"/>-->
-            <!-- Пароль пользователя БД -->
-            <!--<property name="javax.persistence.jdbc.password" value="admin"/>-->
-            <!-- Диалект языка SQL -->
+            <!--<property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/test;create=true"/>
+            &lt;!&ndash;&lt;!&ndash; Имя пользователя БД &ndash;&gt;&ndash;&gt;
+            <property name="javax.persistence.jdbc.user" value="test"/>
+            &lt;!&ndash; Пароль пользователя БД &ndash;&gt;
+            <property name="javax.persistence.jdbc.password" value="admin"/>
+            &lt;!&ndash; Диалект языка SQL &ndash;&gt;-->
             <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyTenSevenDialect"/>
             <!-- Стратегия, по которой Hibernate меняет схему (структуру БД) -->
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <!--<property name="hibernate.hbm2ddl.auto" value="create-drop"/>-->
         </properties>
     </persistence-unit>
 </persistence>

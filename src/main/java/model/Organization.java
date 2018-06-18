@@ -3,7 +3,7 @@ package model;
 import javax.persistence.*;
 import java.util.Set;
 
-//@Entity
+@Entity
 public class Organization {
 
     @Id
@@ -23,13 +23,13 @@ public class Organization {
     public Organization() {
     }
 
-    /*public Organization(Employee manager, Set<Department> departmentSet, String name, String legalAddress, String physicalAddress) {
+    public Organization(Employee manager, Set<Department> departmentSet, String name, String legalAddress, String physicalAddress) {
         this.manager = manager;
         this.departmentSet = departmentSet;
         this.name = name;
         this.legalAddress = legalAddress;
         this.physicalAddress = physicalAddress;
-    }*/
+    }
 
     public long getId() {
         return id;

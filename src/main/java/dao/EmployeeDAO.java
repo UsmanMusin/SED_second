@@ -27,7 +27,11 @@ public class EmployeeDAO {
 
 
     public List<Employee> getEmpList(){
-        return em.createQuery("select e from Employee e",Employee.class).getResultList();
+        Employee employee = new Employee();
+        //employee.setId(1);
+        employee.setName("Ivan");
+        em.persist(employee);
+        return em.createQuery("select e from Employee e").getResultList();
     }
 
 

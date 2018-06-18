@@ -3,11 +3,11 @@ package model;
 import javax.persistence.*;
 import java.util.Set;
 
-//@Entity
+@Entity
 public class Employee {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
 
     private String name;
@@ -26,14 +26,14 @@ public class Employee {
     public Employee() {
     }
 
-    /*public Employee(String name, String surname, String middleName, String position, Department department, Set<Assignment> assignmentSet) {
+    public Employee(String name, String surname, String middleName, String position, Department department, Set<Assignment> assignmentSet) {
         this.name = name;
         this.surname = surname;
         this.middleName = middleName;
         this.position = position;
         this.department = department;
         this.assignmentSet = assignmentSet;
-    }*/
+    }
 
     public long getId() {
         return id;

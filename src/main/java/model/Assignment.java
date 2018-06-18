@@ -3,7 +3,7 @@ package model;
 import javax.persistence.*;
 import java.util.Set;
 
-//@Entity
+@Entity
 public class Assignment {
 
     @Id
@@ -31,7 +31,7 @@ public class Assignment {
     public Assignment() {
     }
 
-    /*public Assignment(String theme, Employee author, Set<Employee> executors, int time, boolean control, String text, boolean execution, String status) {
+    public Assignment(String theme, Employee author, Set<Employee> executors, int time, boolean control, String text, boolean execution, String status) {
         this.theme = theme;
         this.author = author;
         this.executors = executors;
@@ -40,7 +40,7 @@ public class Assignment {
         this.text = text;
         this.execution = execution;
         this.status = status;
-    }*/
+    }
 
     public long getId() {
         return id;
