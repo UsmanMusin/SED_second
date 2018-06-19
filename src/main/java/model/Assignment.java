@@ -4,11 +4,13 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Table(name = "assignment")
 public class Assignment {
 
     @Id
     @GeneratedValue
-    private long id;
+    @Column(name = "as_id")
+    private long as_id;
 
     private String theme;
 
@@ -43,11 +45,11 @@ public class Assignment {
     }
 
     public long getId() {
-        return id;
+        return as_id;
     }
 
     public void setId(long id) {
-        this.id = id;
+        this.as_id = id;
     }
 
     public String getTheme() {

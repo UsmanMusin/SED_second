@@ -12,7 +12,7 @@
         <class>model.Organization</class>
 
         <properties>
-            <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+            <!--<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>-->
             <!--&lt;!&ndash; URL для подключения к базе данных &ndash;&gt;-->
             <!--<property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/test;create=true"/>
             &lt;!&ndash;&lt;!&ndash; Имя пользователя БД &ndash;&gt;&ndash;&gt;
@@ -20,9 +20,10 @@
             &lt;!&ndash; Пароль пользователя БД &ndash;&gt;
             <property name="javax.persistence.jdbc.password" value="admin"/>
             &lt;!&ndash; Диалект языка SQL &ndash;&gt;-->
+
             <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyTenSevenDialect"/>
             <!-- Стратегия, по которой Hibernate меняет схему (структуру БД) -->
-            <!--<property name="hibernate.hbm2ddl.auto" value="create-drop"/>-->
+            <!--<property name="hibernate.hbm2ddl.auto" value="update" />-->
         </properties>
     </persistence-unit>
 </persistence>

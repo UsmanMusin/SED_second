@@ -4,24 +4,26 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Table(name = "employee")
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "emp_id")
+    private long emp_id;
 
     private String name;
     private String surname;
     private String middleName;
     private String position;
 
-    @ManyToOne
+    /*@ManyToOne
     private Department department;
 
 
 
     @ManyToMany(mappedBy = "executors")
-    private Set<Assignment> assignmentSet;
+    private Set<Assignment> assignmentSet;*/
 
     public Employee() {
     }
@@ -31,12 +33,12 @@ public class Employee {
         this.surname = surname;
         this.middleName = middleName;
         this.position = position;
-        this.department = department;
-        this.assignmentSet = assignmentSet;
+        /*this.department = department;
+        this.assignmentSet = assignmentSet;*/
     }
 
     public long getId() {
-        return id;
+        return emp_id;
     }
 
     public String getName() {
@@ -55,12 +57,12 @@ public class Employee {
         return position;
     }
 
-    public Department getDepartment() {
-        return department;
-    }
+//    public Department getDepartment() {
+//        return department;
+//    }
 
     public void setId(long id) {
-        this.id = id;
+        this.emp_id = id;
     }
 
     public void setName(String name) {
@@ -79,7 +81,7 @@ public class Employee {
         this.position = position;
     }
 
-    public void setDepartment(Department department) {
+    /*public void setDepartment(Department department) {
         this.department = department;
     }
 
@@ -89,12 +91,12 @@ public class Employee {
 
     public void setAssignmentSet(Set<Assignment> assignmentSet) {
         this.assignmentSet = assignmentSet;
-    }
+    }*/
 
     @Override
     public String toString(){
         return "\nEmployee:\n" + "name: " + name + "\nsurname:" + surname +
-                "\nmiddlename: " + middleName + "\nposition: " + position+
-                "\ndepartment: " + department;
+                "\nmiddlename: " + middleName + "\nposition: " + position;
+//                "\ndepartment: " + department;
     }
 }

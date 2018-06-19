@@ -28,10 +28,12 @@ public class EmployeeDAO {
 
     public List<Employee> getEmpList(){
         Employee employee = new Employee();
-        //employee.setId(1);
+        employee.setSurname("Ivan");
         employee.setName("Ivan");
+        employee.setMiddleName("Ivan");
+        employee.setPosition("efwef");
         em.persist(employee);
-        return em.createQuery("select e from Employee e").getResultList();
+        return em.createQuery("select e from Employee e",Employee.class).getResultList();
     }
 
 

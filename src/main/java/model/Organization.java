@@ -4,11 +4,13 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Table(name = "organization")
 public class Organization {
 
     @Id
     @GeneratedValue
-    private long id;
+    @Column(name = "org_id")
+    private long org_id;
 
     @OneToOne
     private Employee manager;
@@ -32,11 +34,11 @@ public class Organization {
     }
 
     public long getId() {
-        return id;
+        return org_id;
     }
 
     public void setId(long id) {
-        this.id = id;
+        this.org_id = id;
     }
 
     public String getName() {
