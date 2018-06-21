@@ -18,8 +18,6 @@ public class Department {
     @OneToOne
     private Employee manager;
 
-
-
     @OneToMany
     private Set<Employee> employeeSet;
 

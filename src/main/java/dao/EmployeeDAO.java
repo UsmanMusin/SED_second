@@ -30,7 +30,7 @@ public class EmployeeDAO {
         Employee employee = new Employee();
         employee.setSurname("Ivan");
         employee.setName("Ivan");
-        employee.setMiddleName("Ivan");
+        employee.setMiddleName("Ivan5465654654654654");
         employee.setPosition("efwef");
         em.persist(employee);
         return em.createQuery("select e from Employee e",Employee.class).getResultList();
