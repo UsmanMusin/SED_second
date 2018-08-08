@@ -15,20 +15,18 @@ public class Department {
     private String name;
     private String contacts;
 
-    @OneToOne
+    @ManyToOne()
     private Employee manager;
 
-    @OneToMany
+    @OneToMany(cascade={CascadeType.PERSIST}, orphanRemoval=true,fetch = FetchType.EAGER)
     private Set<Employee> employeeSet;
 
     public Department() {
     }
 
-    public Department(String name, String contacts, Employee manager, Set<Employee> employeeSet) {
+    public Department(String name, String contacts) {
         this.name = name;
         this.contacts = contacts;
-        this.manager = manager;
-        this.employeeSet = employeeSet;
     }
 
     public long getId() {
@@ -71,9 +69,12 @@ public class Department {
         this.employeeSet = employeeSet;
     }
 
+    public void addEmployee(Employee employee){
+        employeeSet.add(employee);
+    }
+
     @Override
     public String toString(){
-        return "\nDepartment:\n" + "name: " + name + "\ncontacts:" + contacts +
-                "\nmanager: " + manager;
+        return name;
     }
 }

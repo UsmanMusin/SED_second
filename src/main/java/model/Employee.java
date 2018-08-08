@@ -16,25 +16,22 @@ public class Employee {
     private String surname;
     private String middleName;
     private String position;
+    private String password;
 
-    @ManyToOne
-    private Department department;
-
-
-
-    @ManyToMany(mappedBy = "executors")
+    @OneToMany(mappedBy = "executor")
     private Set<Assignment> assignmentSet;
 
     public Employee() {
     }
 
-    public Employee(String name, String surname, String middleName, String position, Department department, Set<Assignment> assignmentSet) {
+    public Employee(String name, String surname, String middleName, String position, String password) {
         this.name = name;
         this.surname = surname;
         this.middleName = middleName;
         this.position = position;
-        this.department = department;
-        this.assignmentSet = assignmentSet;
+        this.password = password;
+        //this.department = department;
+        //this.assignmentSet = assignmentSet;
     }
 
     public long getId() {
@@ -57,10 +54,6 @@ public class Employee {
         return position;
     }
 
-    public Department getDepartment() {
-       return department;
-    }
-
     public void setId(long id) {
         this.emp_id = id;
     }
@@ -81,10 +74,6 @@ public class Employee {
         this.position = position;
     }
 
-    public void setDepartment(Department department) {
-        this.department = department;
-    }
-
     public Set<Assignment> getAssignmentSet() {
         return assignmentSet;
     }
@@ -93,10 +82,18 @@ public class Employee {
         this.assignmentSet = assignmentSet;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString(){
-        return "\nEmployee:\n" + "name: " + name + "\nsurname:" + surname +
-                "\nmiddlename: " + middleName + "\nposition: " + position;
-//                "\ndepartment: " + department;
+        return name;
     }
+
 }
+
